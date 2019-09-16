@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +30,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+{
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
