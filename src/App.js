@@ -12,7 +12,7 @@ const App = () => {
           Fan Store
         </p>
         </header>
-        <ProductsInfo products={myProducts}/>
+        <ProductsInfo products={myProducts} setproducts={setMyProducts}/>
     </div>
   );
 }
