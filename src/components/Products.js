@@ -8,9 +8,9 @@ const ProductInfo = ({productData, addProduct}) => {
             <div className="column">
                 <h3 onClick={e => setShow(false)}> {productData.productname}</h3>                
                 <img src={productData.url}></img>
-                <p>{productData.price}</p>
-                <h2>Tykkäyksiä: {productData.amount}</h2>
-                <button onClick={e => addProduct(productData.id)}> Like </button>
+                <p>{productData.price}€</p>
+                <button onClick={e => addProduct(productData.id)}> Lisää koriin </button>
+                
             </div>
     )
     } else {
@@ -20,8 +20,8 @@ const ProductInfo = ({productData, addProduct}) => {
                 <img src={productData.url}></img>
                 <p>{productData.description}</p>
                 <p>{productData.price}</p>
-                <h2>Tykkäyksiä: {productData.amount}</h2>
-                <button onClick={e => addProduct(productData.id)}> Like </button>
+                <button onClick={e => addProduct(productData.id)}> Lisää koriin </button>
+
             </div>
         )
     }
@@ -32,9 +32,14 @@ const ProductsInfo = ({products, setproducts}) => {
     tempProducts.find(url => url.id === id).amount++; 
     setproducts(tempProducts);
     }
+    /*const removeProduct = id =>{
+        const tempProducts = [...products];
+    tempProducts.find(url => url.id === id).amount--;
+    setproducts(tempProducts);
+    }*/
         return (
         <div className="row">
-            <h1>Products</h1>
+            <h1>Tuotteet</h1>
             {products.map(c => (<ProductInfo productData = {c} key = {c.id} addProduct = {addProduct}/>))}
         </div>
     )      
