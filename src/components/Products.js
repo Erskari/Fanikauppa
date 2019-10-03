@@ -9,7 +9,7 @@ const ProductInfo = ({productData, addProduct}) => {
                 <h3 onClick={e => setShow(false)}> {productData.productname}</h3>                
                 <img src={productData.url}></img>
                 <p>{productData.price}€</p>
-                <button onClick={e => addProduct(productData.id)}> Lisää koriin </button>
+                <button className="button2" onClick={e => addProduct(productData.id)}> Lisää koriin </button>
                 
             </div>
     )
@@ -20,7 +20,7 @@ const ProductInfo = ({productData, addProduct}) => {
                 <img src={productData.url}></img>
                 <p>{productData.description}</p>
                 <p>{productData.price}</p>
-                <button onClick={e => addProduct(productData.id)}> Lisää koriin </button>
+                <button className="button2" onClick={e => addProduct(productData.id)}> Lisää koriin </button>
 
             </div>
         )
@@ -32,11 +32,6 @@ const ProductsInfo = ({products, setproducts}) => {
     tempProducts.find(url => url.id === id).amount++; 
     setproducts(tempProducts);
     }
-    /*const removeProduct = id =>{
-        const tempProducts = [...products];
-    tempProducts.find(url => url.id === id).amount--;
-    setproducts(tempProducts);
-    }*/
         return (
         <div className="row">
             <h1>Tuotteet</h1>

@@ -6,7 +6,7 @@ import Cart from './components/Cart';
 
 const App = () => {
   const [myProducts, setMyProducts] = useState(Products);
-  const amounts = myProducts.map(myProducts => myProducts.amount);
+  const amounts = myProducts.map(myProducts => myProducts.amount * myProducts.price);
   const ordered = amounts.reduce((a,b) => a + b, 0);
   return (
     <div className="App">
@@ -15,8 +15,9 @@ const App = () => {
           Fanikauppa
         </p>
         </header>
+        <Cart products={myProducts} setproducts={setMyProducts} ree={amounts} amount={ordered}/>
         <ProductsInfo products={myProducts} setproducts={setMyProducts}/>
-        <Cart products={myProducts} setproducts={setMyProducts} amount={ordered}/>
+        
     </div>
   );
 }

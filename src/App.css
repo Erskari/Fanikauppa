@@ -37,7 +37,7 @@
 
 .column {
   float: left;
-  width: 30%;
+  width: 40%;
   padding: 5px;
 }
 
@@ -46,4 +46,28 @@
   content: "";
   clear: both;
   display: table;
+}
+
+.cart {
+  width: 300px;
+  height: auto;
+  position: fixed;
+  right: 100px;
+  background-color: #CBC6C5;
+  border: 10px solid black;
+}
+
+.button1 {
+  padding: 5px;
+  margin-bottom: 3px;
+}
+
+.button2 {
+  padding: 10px 24px;
+  margin-bottom: 5px;
+}
+
+.button3 {
+  padding: 5px 24px;
+  margin-bottom: 3px;
 }
