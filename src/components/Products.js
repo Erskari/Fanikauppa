@@ -7,7 +7,7 @@ const ProductInfo = ({productData, addProduct}) => {
     return (
             <div className="column">
                 <h3 onClick={e => setShow(false)}> {productData.productname}</h3>                
-                <img src={productData.url}></img>
+                <img src={productData.url}alt="lmao"></img>
                 <p>{productData.price}€</p>
                 <button className="button2" onClick={e => addProduct(productData.id)}> Lisää koriin </button>
                 
@@ -17,7 +17,7 @@ const ProductInfo = ({productData, addProduct}) => {
         return(
             <div className="column">
                 <h3 onClick={e => setShow(true)}>{productData.productname}</h3>
-                <img src={productData.url}></img>
+                <img src={productData.url} alt="lmao"></img>
                 <p>{productData.description}</p>
                 <p>{productData.price}</p>
                 <button className="button2" onClick={e => addProduct(productData.id)}> Lisää koriin </button>

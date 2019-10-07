@@ -4,10 +4,9 @@ import '../App.css';
 const Cartt = ({productData, removeProduct}) => {
     //const [show, setShow] = useState(true);
     const productPrice = productData.price * productData.amount;
-    if(productData.amount == 0){
+    if(productData.amount === 0){
         return(
-        <div>
-        </div>
+        <div/>
         )
         } else {
             return(
@@ -17,7 +16,8 @@ const Cartt = ({productData, removeProduct}) => {
             )
         }
 }
-const Cart = ({products, setproducts, amount, productData}) => {
+
+const Cart = ({products, setproducts, amount, shopstate, setshopstate}) => {
     const removeProduct = id =>{
         const tempProducts = [...products];
         tempProducts.find(yeet => yeet.id === id).amount--;
@@ -31,10 +31,9 @@ const Cart = ({products, setproducts, amount, productData}) => {
         }
         setproducts(temp);
     }
-
-    if (amount == 0) {
+    if (amount === 0) {
         return (
-            <div />
+            <div/>
     )
     } else {
         return (
@@ -43,7 +42,7 @@ const Cart = ({products, setproducts, amount, productData}) => {
                 {products.map(c => (<Cartt productData = {c} key = {c.id} removeProduct = {removeProduct}/>))}         
                 <h2>Yhteensä : {amount}€</h2>
                 <button className="button3" onClick={e => removeAllProducts()}> Tyhjennä ostoskori </button><br/>
-                <button className="button2">Maksamaan</button>
+                <button className="button2" onClick={e => setshopstate(true)}>Maksamaan</button>
             </div>
         )
     }
